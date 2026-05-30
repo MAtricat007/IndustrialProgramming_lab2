@@ -4,7 +4,6 @@ speed = 5
 jump_height = 11
 g = 0.25
 drop_speed = 15
-"""Hero = 'player_pattern_static_left.png'"""
 
 class Player(pg.sprite.Sprite):
 
@@ -49,19 +48,6 @@ class Player(pg.sprite.Sprite):
         if not left and not right:
             self.x_speed = 0
 
-
-        
-        """if not self.onGround:
-            if down:
-                self.y_speed = drop_speed
-            if not down and not up:
-                self.y_speed += g"""
-
-        """if self.x_speed == speed or self.x_speed == 0:
-            self.image = pg.transform.flip(self.image, True, False)
-        if self.x_speed == -speed or self.x_speed == 0:
-            self.image = pg.transform.flip(self.image, True, False)"""
-
         self.rect.x += self.x_speed
         self.collide(self.x_speed, 0, platforms)
 
@@ -84,24 +70,11 @@ class Player(pg.sprite.Sprite):
                     self.rect.bottom = i.rect.top
                     self.onGround = True
                     self.y_speed = 0
-                """else:
-                    self.onGround = False
-                self.onGround = False"""
                 if y_speed < 0:
                     self.rect.top = i.rect.bottom
-                    """self.onGround = False"""
                     self.y_speed = 0
-
-
-                """if self.rect.bottomleft == i.rect.topright:
-                    rect1 = pg.Rect(self.rect.x + self.rect.width, self.rect.y, 1, 1) #невидимый rect для столкновения со стеной и последующего падения"""
 
     def collide_enemy(self, enemy, floor):
         for i in enemy:
             if pg.sprite.collide_rect(self, i):
                 self.health -= 5 * floor * 0.25
-'''    def draw(self, screen):
-        """
-        отрисовка персанажа на экране
-        """
-        screen.blit(self.image, (self.rect.x, self.rect.y))'''
