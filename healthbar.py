@@ -18,3 +18,10 @@ class Healthbar_green(pg.sprite.Sprite):
         self.image.fill((0, 255, 0))
         self.rect = pg.Rect(player.rect.x, player.rect.y - 12, player.health // 15, 10)
 
+создаю конфликт просто так
+ысвывс
+ывсывс
+ывсывс
+ыывсывс
+ывсывс
+ывсывсы
